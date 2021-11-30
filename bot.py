@@ -36,7 +36,7 @@ class MusicBot(commands.Bot):
         :param exts:
         :return:
         """
-        for m in pkgutil.iter_modules(exts):
+        for m in pkgutil.iter_modules([exts]):
             module = f"cogs.{m.name}"
             try:
                 self.load_extension(module)
